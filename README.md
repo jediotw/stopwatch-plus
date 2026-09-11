@@ -9,7 +9,9 @@ Stopwatch+ puts a small, distraction-free time tracker directly on the webpage y
 ![Stopwatch+ Preview](./media/screenshot.png)
 
 ---
+![Stopwatch+ Preview](./media/screenshot.png)
 
+![Stopwatch+](./media/image.png)
 ## ✨ Features
 
 ### ⏱️ Stopwatch
