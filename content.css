@@ -1,0 +1,208 @@
+* { box-sizing: border-box; }
+
+#widget {
+  width: 238px;
+  height: 68px;
+  position: relative;
+  background: linear-gradient(145deg, #353a3b 0%, #25292a 55%, #202324 100%);
+  border: 5px solid #25292a;
+  border-radius: 16px;
+  padding: 4px;
+  color: #2f3535;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.16) inset,
+    0 -1px 0 rgba(0,0,0,.35) inset,
+    0 2px 3px rgba(0,0,0,.35),
+    0 10px 24px rgba(0,0,0,.22);
+}
+
+#screen {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #7e8581;
+  border-radius: 9px;
+  background: linear-gradient(180deg, #e7ebe6 0%, #d9ded9 100%);
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.85) inset,
+    0 -1px 0 rgba(0,0,0,.10) inset,
+    0 0 0 1px rgba(0,0,0,.08);
+}
+
+#main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 9px;
+  gap: 0;
+  cursor: grab;
+  user-select: none;
+}
+
+#main:active { cursor: grabbing; }
+
+#mode {
+  width: 22px;
+  height: 28px;
+  flex: 0 0 22px;
+  display: grid;
+  place-items: center;
+}
+
+#mode svg {
+  width: 20px;
+  height: 20px;
+  stroke: #414847;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 1px 0 rgba(255,255,255,.45));
+}
+
+#divider {
+  width: 1px;
+  height: 28px;
+  flex: 0 0 1px;
+  margin: 0 12px 0 8px;
+  background: #b5bbb6;
+  box-shadow: 1px 0 0 rgba(255,255,255,.55);
+}
+
+#time {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 17px;
+  line-height: 1;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  color: #252b2b;
+  text-shadow: 0 1px 0 rgba(255,255,255,.55);
+}
+
+#action {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  margin: 0 10px 0 12px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #3a4041, #292e2f);
+  color: #f4f6f4;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  box-shadow:
+    0 2px 3px rgba(0,0,0,.28),
+    0 1px 0 rgba(255,255,255,.20) inset,
+    0 -1px 0 rgba(0,0,0,.30) inset;
+}
+
+#action:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 3px 5px rgba(0,0,0,.30),
+    0 1px 0 rgba(255,255,255,.20) inset,
+    0 -1px 0 rgba(0,0,0,.30) inset;
+}
+
+#action:active { transform: translateY(0); }
+
+#action svg { width: 17px; height: 17px; }
+
+#menu {
+  width: 22px;
+  height: 32px;
+  flex: 0 0 22px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #414847;
+  cursor: pointer;
+  font: 20px/20px Arial, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+#menu:hover { background: rgba(48,52,53,.09); }
+
+#menu-panel, #timer-panel, #save-panel {
+  position: absolute;
+  top: 76px;
+  right: 0;
+  width: 190px;
+  padding: 7px;
+  background: #e6eae5;
+  border: 4px solid #292b2c;
+  border-radius: 11px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.24), 0 1px 0 rgba(255,255,255,.45) inset;
+}
+
+#menu-panel { width: 145px; padding: 5px; }
+
+.menu-item, .primary {
+  display: block; width: 100%; border: 0; border-radius: 6px; padding: 8px 9px;
+  background: transparent; color: #292b2c; text-align: left; font: 12px Arial, sans-serif; cursor: pointer;
+}
+
+.menu-item:hover { background: #d2d7d2; }
+
+.panel-title { margin: 1px 2px 7px; color: #59605d; font: 12px Arial, sans-serif; }
+
+input, textarea {
+  width: 100%; border: 1px solid #aeb5b0; border-radius: 6px; outline: none;
+  background: #f5f7f4; color: #292b2c; font: 12px Arial, sans-serif; padding: 7px 8px;
+}
+
+textarea { margin-top: 6px; height: 58px; resize: none; }
+
+.primary { margin-top: 7px; background: #292b2c; color: white; text-align: center; }
+
+.timer-fields { display: grid; grid-template-columns: repeat(3,1fr); gap: 4px; }
+.timer-fields input { text-align: center; padding: 7px 2px; }
+
+.alert #screen {
+  background: linear-gradient(180deg, #f0dfdc 0%, #e7d2cf 100%);
+  border-color: #aa827d;
+}
+
+.alert #time { color: #c52f2a; text-shadow: 0 1px 0 rgba(255,255,255,.55); }
+
+.alert #action {
+  background: linear-gradient(145deg, #d95550, #b93b36);
+  color: white;
+}
+
+.hidden { display: none !important; }
+
+#history-panel {
+  position: absolute; top: 76px; right: 0; width: 250px; max-height: min(360px, calc(100vh - 105px));
+  overflow: hidden; padding: 8px; background: #e6eae5; border: 4px solid #292b2c; border-radius: 11px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.24), 0 1px 0 rgba(255,255,255,.45) inset;
+}
+
+.history-header { display:flex; align-items:center; justify-content:space-between; height:24px; margin-bottom:4px; }
+.history-header .panel-title { margin:1px 2px; }
+#history-close { width:24px; height:24px; padding:0; border:0; border-radius:5px; background:transparent; color:#292b2c; font:20px/20px Arial,sans-serif; cursor:pointer; }
+#history-close:hover { background:#d2d7d2; }
+#history-list { max-height:min(260px,calc(100vh - 200px)); overflow-y:auto; scrollbar-width:thin; padding-right:2px; }
+.history-item { padding:8px 6px; border-bottom:1px solid #c5cbc6; }
+.history-item:last-child { border-bottom:0; }
+.history-title { color:#292b2c; font:600 12px Arial,sans-serif; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.history-meta { margin-top:3px; color:#68706c; font:11px Arial,sans-serif; font-variant-numeric:tabular-nums; }
+.history-notes { margin-top:4px; color:#555d59; font:11px/1.35 Arial,sans-serif; word-break:break-word; }
+.history-empty { padding:12px 6px; color:#68706c; font:11px Arial,sans-serif; text-align:center; }
+.history-export { width:100%; margin-top:7px; padding:7px 9px; border:0; border-radius:6px; background:#292b2c; color:white; font:12px Arial,sans-serif; cursor:pointer; }
+.history-export:hover { opacity:.9; }
+
+#widget { cursor:grab; touch-action:none; }
+#widget:active { cursor:grabbing; }
+#screen { touch-action:none; }
+#menu-panel,#timer-panel,#save-panel,#history-panel { touch-action:auto; }
+#widget button,#widget input,#widget textarea,#widget form { touch-action:auto; }

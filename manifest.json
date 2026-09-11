@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Stopwatch+",
+  "version": "0.6.5",
+  "description": "A minimal floating stopwatch and timer.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "downloads"
+  ],
+  "action": {
+    "default_title": "Stopwatch+",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
