@@ -1,11 +1,12 @@
-
 # ⏱️ Stopwatch+
 
-> **Track Time. Anywhere.**
+> **Stopwatch+ — Track Time. Anywhere.**
 
 A minimal floating stopwatch and timer for Chrome.
 
-Stopwatch+ puts a small, distraction-free time tracker directly on the webpage you're using — perfect for coding, competitive programming, studying, debugging, or any task where you want to know where your time is going.
+Stopwatch+ puts a small, distraction-free time tracker directly on the webpage you're using — perfect for coding, competitive programming, studying, debugging, watching videos, or any task where you want to know where your time is going.
+
+![Stopwatch+ Preview](./media/screenshot.png)
 
 ---
 
@@ -55,9 +56,29 @@ When nothing is running, Stopwatch+ gives you two simple choices:
 * **Timer** → opens timer setup
 
 No unnecessary menus or screens.
-![alt text](./media/image.png)
-![alt text](./media/screenshot.png)
+
 ---
+
+### 🌐 Carry the Timer Across Tabs
+
+The timer isn't tied to a single webpage.
+
+Start a timer on one tab and switch to another — the same timer keeps running.
+
+```text
+Tab 1                     Tab 2
+
+Codeforces                Documentation
+    │                          │
+    └────── Same Timer ────────┘
+              ↓
+          00:42:18
+```
+
+This makes Stopwatch+ especially useful when your workflow requires switching between multiple websites.
+
+---
+
 ### 📝 Save Tracked Time
 
 When you stop a session, you can save it with a title and optional notes.
@@ -77,10 +98,11 @@ Example:
 
 ```text
 Title:
-Codeforces - Graph Problem
+Codeforces - Segment Tree
 
 Notes:
-Solved using DFS + visited array
+Got stuck implementing the segment tree.
+Had to look up lazy propagation.
 ```
 
 ---
@@ -108,6 +130,8 @@ Duration
 Mode
 Created At
 ```
+
+This lets you keep a record of how you spent your time and analyze it later.
 
 ---
 
@@ -145,47 +169,156 @@ The widget is designed to feel like a small physical timer floating on your scre
 
 ---
 
-## 🎯 Why Stopwatch+?
+# 🎯 Real-World Use Cases
 
-When you're solving a programming problem, it's easy to lose track of time.
+Stopwatch+ is built around a simple question:
 
-You start thinking:
+> **Where did my time actually go?**
 
-> "I'll solve this in 30 minutes."
+Here are two situations where it becomes particularly useful.
 
-And suddenly...
+---
 
-> **2 hours later. 😭**
+## 🎥 1. Track How Much Time You Actually Spend Watching YouTube
 
-Opening another application just to run a timer is also unnecessary.
+You open YouTube to watch something.
 
-Stopwatch+ keeps the timer **where you're already working**.
+Start Stopwatch+.
+
+Watch your videos.
+
+When you're done, stop the timer and save the session.
+
+```text
+YouTube
+   ↓
+Start Stopwatch+
+   ↓
+Watch videos
+   ↓
+Stop
+   ↓
+Save
+```
 
 For example:
 
 ```text
-Codeforces
-        ↓
-Start Stopwatch+
-        ↓
-Solve problem
-        ↓
-Submit
-        ↓
-Stop
-        ↓
-Save session
+Title:
+YouTube
+
+Duration:
+01:24:37
+
+Notes:
+Watched system design videos
 ```
 
-Now you know exactly how much time you spent.
+Instead of guessing how much time you spent watching YouTube, you have an actual record.
+
+If you really care about your time, **measure it**.
 
 ---
 
-## 💻 Great For
+## 💻 2. Track Coding Contest Problem-Solving Time Across Tabs
 
-### Competitive Programming
+This is where the cross-tab timer becomes especially useful.
 
-Use it while solving:
+Imagine you're participating in a coding contest.
+
+You start solving **Question 1**.
+
+You decide to implement a segment tree.
+
+Then you get stuck.
+
+You don't remember the exact implementation, so you switch to another tab to look it up.
+
+With many timer extensions, the timer is tied to the current page or tab.
+
+With Stopwatch+, **the timer keeps running when you switch tabs.**
+
+```text
+                 Coding Contest
+                       │
+                       ▼
+                Start Stopwatch
+                       │
+                       ▼
+                  Question 1
+                       │
+                       ▼
+                 Get stuck 😭
+                       │
+                       ▼
+              Open another tab
+                       │
+                       ▼
+             Look up Segment Tree
+                       │
+                       ▼
+               Return to contest
+                       │
+                       ▼
+                Same timer
+                still running
+                       │
+                       ▼
+                 Solve Question
+                       │
+                       ▼
+                     Stop
+                       │
+                       ▼
+                 Save + Notes
+```
+
+You can then record exactly how much time you spent on each problem.
+
+```text
+Question 1
+Duration: 42:18
+
+Notes:
+Difficulty was implementing the segment tree.
+Forgot the lazy propagation implementation.
+
+
+Question 2
+Duration: 27:43
+
+Notes:
+DP transition was straightforward.
+
+
+Question 3
+Duration: 01:13:05
+
+Notes:
+Spent most of the time finding the observation.
+```
+
+Later, open **History** and export everything as CSV.
+
+This gives you more than just a timer.
+
+You get a record of:
+
+* How long each problem took
+* Which problems consumed most of your time
+* What difficulty you faced
+* What you had to look up
+* Notes about your solving process
+
+Over time, this can help you understand your actual problem-solving speed and where you struggle.
+
+---
+
+# 🏆 Competitive Programming
+
+Stopwatch+ is particularly useful during contests and practice sessions.
+
+You can use it with:
 
 * Codeforces
 * LeetCode
@@ -194,7 +327,7 @@ Use it while solving:
 * CodeChef
 * Other online judges
 
-Example:
+For example:
 
 ```text
 Problem A → 08:21
@@ -203,25 +336,89 @@ Problem C → 42:18
 Problem D → 01:13:05
 ```
 
-This makes it easier to understand your actual problem-solving speed.
+Because the timer continues across tabs, you can freely switch between:
+
+```text
+Contest
+   ↕
+Documentation
+   ↕
+Editorial
+   ↕
+Code
+   ↕
+Search
+```
+
+without losing your timing session.
 
 ---
 
-### 👨‍💻 Development
+# 👨‍💻 Development
 
-Track time spent:
+Track time spent on:
 
 * Debugging
 * Implementing a feature
 * Reading documentation
 * Fixing a bug
 * Learning a new technology
+* Investigating an issue
+
+Example:
+
+```text
+Title:
+Fix authentication bug
+
+Duration:
+01:17:32
+
+Notes:
+Found the issue in token refresh logic.
+```
 
 ---
 
-### 📖 Studying
+# 📖 Studying
 
-Use the stopwatch while studying or use the timer when you want a fixed study session.
+Use the stopwatch when you want to measure how long you actually study.
+
+Or use the timer when you want a fixed study session.
+
+```text
+Start Timer
+    ↓
+45 minutes
+    ↓
+Study
+    ↓
+Timer finishes
+```
+
+---
+
+# 📊 Understand Where Your Time Goes
+
+Stopwatch+ follows a simple workflow:
+
+```text
+        TRACK
+          ↓
+        SAVE
+          ↓
+       ANNOTATE
+          ↓
+        REVIEW
+          ↓
+        EXPORT
+```
+
+The goal isn't to turn Stopwatch+ into a complicated productivity platform.
+
+It's simply to give you a reliable answer to:
+
+> **"How much time did I actually spend on this?"**
 
 ---
 
@@ -316,6 +513,10 @@ Stopwatch+/
 ├── content.css
 ├── README.md
 │
+├── media/
+│   ├── image.png
+│   └── screenshot.png
+│
 └── icons/
     ├── icon16.png
     ├── icon32.png
@@ -325,15 +526,15 @@ Stopwatch+/
 
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
 Stopwatch+ can currently be installed as an unpacked Chrome extension.
 
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repository-url>
-cd Stopwatch+
+git clone https://github.com/jediotw/stopwatch-plus.git
+cd stopwatch-plus
 ```
 
 ### 2. Open Chrome Extensions
@@ -370,7 +571,7 @@ The floating Stopwatch+ widget will appear automatically.
 
 ---
 
-## 🔒 Privacy
+# 🔒 Privacy
 
 Stopwatch+ is designed to work locally.
 
@@ -384,9 +585,11 @@ There is:
 
 Timer state and history are stored locally using Chrome's extension storage.
 
+Your tracked sessions stay on your device unless you explicitly export them.
+
 ---
 
-## 🧠 Design Philosophy
+# 🧠 Design Philosophy
 
 Stopwatch+ follows one simple principle:
 
@@ -396,17 +599,17 @@ It isn't trying to become another giant productivity dashboard.
 
 No:
 
-* complicated task management
-* social features
-* unnecessary notifications
-* productivity scores
-* distracting dashboards
+* Complicated task management
+* Social features
+* Productivity scores
+* Distracting dashboards
+* Unnecessary notifications
 
 Just a small timer that is available whenever you need it.
 
 ---
 
-## 🗺️ Roadmap
+# 🗺️ Roadmap
 
 The project is intentionally kept small.
 
@@ -422,7 +625,7 @@ Features that add unnecessary complexity will intentionally be avoided.
 
 ---
 
-## 🤝 Contributing
+# 🤝 Contributing
 
 Found a bug or have an idea?
 
@@ -432,9 +635,9 @@ Feedback from competitive programmers and developers is especially welcome.
 
 ---
 
-## ⭐ Feedback
+# ⭐ Feedback
 
-If you use Stopwatch+ while solving problems or working, I'd love to hear how you use it.
+If you use Stopwatch+ while solving problems, studying, developing, or tracking your screen time, I'd love to hear how you use it.
 
 Especially if you use:
 
@@ -443,19 +646,11 @@ Especially if you use:
 * AtCoder
 * CodeChef
 * GitHub
-* Other coding platforms
+* YouTube
+* Other coding or learning platforms
 
 ---
 
-## 📜 License
+# 📜 License
 
 MIT License
-
-```
-
-**One small branding detail:** I'd keep the tagline right under the title:
-
-> **Stopwatch+ — Track Time. Anywhere.**
-
-That's strong enough for the GitHub README and also fits the icon/branding you've been building.
-```
