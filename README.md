@@ -1,8 +1,4 @@
-The README inside the package is outdated — it still says **Stopwatch+ 0.3**. We should update it to reflect the current **Stopwatch+ v0.6.5** features.
 
-Here's the README I'd use for the project:
-
-````markdown
 # ⏱️ Stopwatch+
 
 > **Track Time. Anywhere.**
